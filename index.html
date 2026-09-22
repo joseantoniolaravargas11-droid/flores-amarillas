@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- DEDICA:META -->
 <title>Galaxia Simple - Agujero Negro, Día de las Flores Amarillas</title>
 <meta name="description" content="Una galaxia sencilla con agujero negro, anillo dorado y fotos flotando entre frases del Día de las Flores Amarillas.">
@@ -19,8 +19,25 @@
 <h1 id="main-title"></h1>
 
 <div id="start-screen">
-  <div id="start-heart" aria-hidden="true">🌻</div>
-  <div id="start-text">Toca para iniciar</div>
+  <div class="letter-intro">
+    <p class="eyebrow">UN PEDACITO DE MI CORAZÓN</p>
+    <h2>Para mi niña hermosa</h2>
+    <p class="hint">Hay algo que quiero decirte…</p>
+  </div>
+  <div class="envelope" id="envelope">
+    <div class="envelope-back"></div>
+    <div class="envelope-flap"></div>
+    <button id="open-letter" class="sunflower-seal" aria-label="Abrir la carta" aria-expanded="false" aria-controls="love-letter">🌻</button>
+    <span class="envelope-label">Con todo mi amor</span>
+  </div>
+  <p id="open-hint" class="hint">Toca el girasol para abrir tu carta</p>
+  <article id="love-letter" class="love-letter" hidden tabindex="-1">
+    <span class="letter-flower" aria-hidden="true">🌻</span>
+    <h2>Holaa, amor:</h2>
+    <p id="letter-message"></p>
+    <span class="letter-heart" aria-hidden="true">♡</span>
+    <button id="see-surprise" class="surprise-button">Ver tu sorpresa 💛</button>
+  </article>
 </div>
 
 <audio id="audio" loop>
@@ -32,6 +49,17 @@
 <!-- DEDICA:CONFIG -->
 <script src="config.js"></script>
 
+<script>
+document.getElementById('letter-message').textContent = CONFIG.carta;
+document.getElementById('open-letter').addEventListener('click', function () {
+  this.setAttribute('aria-expanded', 'true');
+  this.disabled = true;
+  document.getElementById('start-screen').classList.add('letter-open');
+  const letter = document.getElementById('love-letter');
+  letter.hidden = false;
+  setTimeout(() => letter.focus({preventScroll:true}), 600);
+});
+</script>
 <script src="galaxia.js"></script>
 </body>
 </html>

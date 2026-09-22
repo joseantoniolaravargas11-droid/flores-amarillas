@@ -1,6 +1,8 @@
 // EDITA AQUI el titulo, las frases y las rutas de fotos y musica.
 // Conserva las comillas y las comas. Las rutas distinguen mayusculas.
 const DEFAULTS = {
+  // Cambia este texto para personalizar la carta. Usa \n para separar párrafos.
+  carta: "Tal vez sea un poco tarde, pero aquí tienes tus flores amarillas. Sé que ahora no puedo verte por la distancia.\n\nTe amoooo mucho y espero pronto pasar todas las fechas importantes a tu lado.\n\nTe amo unnn montón, bby, mi niñaaa hermosa.",
   titulo: "Feliz Día de las Flores Amarillas 🌻",
   frases: [
     "🌻 Como el girasol, miro hacia ti","🌼 Gracias por ser mi sol de siempre","🌻 Contigo hasta lo simple brilla",

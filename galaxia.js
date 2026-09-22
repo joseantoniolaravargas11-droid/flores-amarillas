@@ -251,4 +251,4 @@ function startExperience(){
   setTimeout(()=>startScreen.style.display='none',800);
   audio.play().catch(()=>{});
 }
-startScreen.addEventListener('click',startExperience);
+document.getElementById('see-surprise').addEventListener('click',startExperience);
